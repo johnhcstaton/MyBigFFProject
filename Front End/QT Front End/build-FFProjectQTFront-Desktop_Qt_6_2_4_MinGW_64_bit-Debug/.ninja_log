@@ -1,0 +1,13 @@
+# ninja log v5
+1	27	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+1	811	6764896156186340	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+1	811	6764896156186340	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+1	811	6764896156186340	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+1	811	6764896156186340	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+811	2216	6764896172317328	CMakeFiles/FFProjectQTFront.dir/FFProjectQTFront_autogen/mocs_compilation.cpp.obj	c1bd7e80f7ed78a2
+815	2367	6764896173822384	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	642e89d8556a2476
+817	2376	6764896173922477	CMakeFiles/FFProjectQTFront.dir/main.cpp.obj	6dd15eb28697c824
+2377	2633	6764896176463744	FFProjectQTFront.exe	ed62f7061b4b6183
+1	23	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+1	22	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+1	23	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
