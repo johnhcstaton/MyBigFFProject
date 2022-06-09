@@ -1,13 +1,93 @@
 # ninja log v5
 1	27	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
-1	811	6764896156186340	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
-1	811	6764896156186340	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
-1	811	6764896156186340	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
-1	811	6764896156186340	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
-811	2216	6764896172317328	CMakeFiles/FFProjectQTFront.dir/FFProjectQTFront_autogen/mocs_compilation.cpp.obj	c1bd7e80f7ed78a2
-815	2367	6764896173822384	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	642e89d8556a2476
-817	2376	6764896173922477	CMakeFiles/FFProjectQTFront.dir/main.cpp.obj	6dd15eb28697c824
-2377	2633	6764896176463744	FFProjectQTFront.exe	ed62f7061b4b6183
-1	23	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
-1	22	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
-1	23	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+2776	3004	6765109471127507	FFProjectQTFront.exe	ed62f7061b4b6183
+13	296	6765112575329795	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+13	296	6765112575329795	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+13	296	6765112575329795	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+378	2775	6765109468875462	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	642e89d8556a2476
+13	296	6765112575329795	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+784	2301	6765108702298132	CMakeFiles/FFProjectQTFront.dir/FFProjectQTFront_autogen/mocs_compilation.cpp.obj	c1bd7e80f7ed78a2
+787	2449	6765108703779475	CMakeFiles/FFProjectQTFront.dir/main.cpp.obj	6dd15eb28697c824
+1	24	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+12	1007	6765113429917297	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	1007	6765113429917297	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+12	1007	6765113429917297	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	1007	6765113429917297	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+1008	2756	6765113449995530	CMakeFiles/FFProjectQTFront.dir/FFProjectQTFront_autogen/mocs_compilation.cpp.obj	b5ed99088cfcf7ab
+1011	2815	6765113450586070	CMakeFiles/FFProjectQTFront.dir/main.cpp.obj	5cfe1d9aa8a85b87
+1014	3670	6765113459133841	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	3ba572f06dbe66c
+3670	3906	6765113461465958	FFProjectQTFront.exe	9173732c85f1ce58
+1	26	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+13	310	6765113605157633	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+13	310	6765113605157633	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+13	310	6765113605157633	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+13	310	6765113605157633	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+313	2749	6765113629539786	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	3ba572f06dbe66c
+2749	2979	6765113631821859	FFProjectQTFront.exe	9173732c85f1ce58
+1	29	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+14	294	6765113948629685	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+14	294	6765113948629685	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+14	294	6765113948629685	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+14	294	6765113948629685	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+297	2954	6765113975233860	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	3ba572f06dbe66c
+2954	3188	6765113977535952	FFProjectQTFront.exe	9173732c85f1ce58
+1	26	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+11	779	6765116315106959	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+11	779	6765116315106959	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+11	779	6765116315106959	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+11	779	6765116315106959	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+782	2688	6765116336556445	CMakeFiles/FFProjectQTFront.dir/main.cpp.obj	5cfe1d9aa8a85b87
+779	2766	6765116337337155	CMakeFiles/FFProjectQTFront.dir/FFProjectQTFront_autogen/mocs_compilation.cpp.obj	b5ed99088cfcf7ab
+1	25	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+11	283	6765118298137585	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+11	283	6765118298137585	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+11	283	6765118298137585	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+11	283	6765118298137585	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+286	2813	6765118323430567	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	3ba572f06dbe66c
+2814	3070	6765118325972878	FFProjectQTFront.exe	9173732c85f1ce58
+1	24	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+1	26	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+8	764	6765119421110847	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+8	764	6765119421110847	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+8	764	6765119421110847	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+8	764	6765119421110847	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+772	2710	6765119442860608	CMakeFiles/FFProjectQTFront.dir/main.cpp.obj	5cfe1d9aa8a85b87
+764	2772	6765119443481170	CMakeFiles/FFProjectQTFront.dir/FFProjectQTFront_autogen/mocs_compilation.cpp.obj	b5ed99088cfcf7ab
+769	3490	6765119450677711	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	3ba572f06dbe66c
+3491	3771	6765119453450231	FFProjectQTFront.exe	9173732c85f1ce58
+1	25	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+12	293	6765120235796692	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	293	6765120235796692	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+12	293	6765120235796692	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	293	6765120235796692	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+1	25	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+12	319	6765120450035573	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	319	6765120450035573	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+12	319	6765120450035573	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	319	6765120450035573	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+323	2897	6765120475808994	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	3ba572f06dbe66c
+2897	3162	6765120478431377	FFProjectQTFront.exe	9173732c85f1ce58
+1	24	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+1	28	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+8	325	6765121616904583	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+8	325	6765121616904583	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+8	325	6765121616904583	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+8	325	6765121616904583	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+1	28	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+12	323	6765121697127475	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	323	6765121697127475	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+12	323	6765121697127475	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	323	6765121697127475	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+1	26	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+12	318	6765121796872809	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	318	6765121796872809	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+12	318	6765121796872809	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	318	6765121796872809	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+1	26	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f
+12	310	6765122094662552	FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	310	6765122094662552	FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+12	310	6765122094662552	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/timestamp	fd0547b6d4f6c3a0
+12	310	6765122094662552	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/FFProjectQTFront_autogen/mocs_compilation.cpp	fd0547b6d4f6c3a0
+313	2906	6765122120616137	CMakeFiles/FFProjectQTFront.dir/mainwindow.cpp.obj	3ba572f06dbe66c
+2907	3175	6765122123268546	FFProjectQTFront.exe	9173732c85f1ce58
+1	24	0	D:/MyBigFFProject/Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	f62b7bec7b76f28f

@@ -41,9 +41,9 @@ public class FfProjectSpringBackApplication {
 	}
 
 	@SuppressWarnings("deprecation")
-	@PostMapping({"/ingest/ingestRBStatsForYear"})
-	public String ingestRBStatsForYear(final Integer year, final String csvFile) throws IOException {
-		String SQL = "INSERT INTO rb(player_name, team, age, position, games_played, games_started, rushing_attempts, " +
+	@PostMapping({"/ingest/ingestRushingStatsForYear"})
+	public String ingestRushingStatsForYear(final Integer year, final String csvFile) throws IOException {
+		String SQL = "INSERT INTO rushing_stats(player_name, team, age, position, games_played, games_started, rushing_attempts, " +
 				"rushing_yards, rushing_touchdowns, rushing_first_downs, longest_rush, rushing_yards_per_attempt, " +
 				"rushing_yards_per_game, fumbles, year) " +
 				"VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -57,9 +57,9 @@ public class FfProjectSpringBackApplication {
 				player = player.replace("*", "");
 				player = player.replace("+", "");
 				String[] playerSplit = player.split(Pattern.quote("\\"));
-				String team = record.get("Tm");
+				String team = record.get("Tm").toUpperCase();
 				String age = record.get("Age");
-				String position = record.get("Pos");
+				String position = record.get("Pos").toUpperCase();;
 				String games = record.get("G");
 				String gamesStarted = record.get("GS");
 				String attempts = record.get("Att");
