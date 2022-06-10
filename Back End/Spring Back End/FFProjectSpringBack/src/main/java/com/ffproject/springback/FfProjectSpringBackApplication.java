@@ -99,4 +99,63 @@ public class FfProjectSpringBackApplication {
 		return "ingested";
 	}
 
+
+	@SuppressWarnings("deprecation")
+	@PostMapping({"/ingest/ingestPassingStatsForYear"})
+	public String ingestPassingStatsForYear(final Integer year, final String csvFile) throws IOException {
+		String SQL = "INSERT INTO passing_stats(player_name, team, age, position, games_played, games_started, passes_completed, " +
+				"passes_attempted, passing_yards, passing_touchdowns, interceptions, first_downs_passing, longest_pass, " +
+				"sacks, year) " +
+				"VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+		try (Connection conn = connect()) {
+
+			Reader in = new FileReader(csvFile);
+			Iterable<CSVRecord> records = CSVFormat.EXCEL.withHeader().parse(in);
+			for (CSVRecord record : records) {
+				String player = record.get("Player");
+				player = player.replace("*", "");
+				player = player.replace("+", "");
+				String[] playerSplit = player.split(Pattern.quote("\\"));
+				String team = record.get("Tm").toUpperCase();
+				String age = record.get("Age");
+				String position = record.get("Pos").toUpperCase();;
+				String games = record.get("G");
+				String gamesStarted = record.get("GS");
+				String completions = record.get("Cmp");
+				String attempts = record.get("Att");
+				String yards = record.get("Yds");
+				String touchdowns = record.get("TD");
+				String interceptions = record.get("Int");
+				String firstdowns = record.get("1D");
+				String longest = record.get("Lng");
+				String sacks = record.get("Sk");
+				System.out.println(playerSplit[0] + " " + team + " " + age + " " + position + " " + games + " " + gamesStarted + " " +
+						attempts + " " + yards + " " + touchdowns + " " + firstdowns + " " + longest + " " + completions
+						+ " " + interceptions + " " + sacks + " " + year);
+
+				PreparedStatement pstmt = conn.prepareStatement(SQL);
+				pstmt.setString(1, playerSplit[0].trim());
+				pstmt.setString(2, team);
+				pstmt.setInt(3, Integer.parseInt(age));
+				pstmt.setString(4, position);
+				pstmt.setInt(5, Integer.parseInt(games));
+				pstmt.setInt(6, Integer.parseInt(gamesStarted));
+				pstmt.setInt(7, Integer.parseInt(completions));
+				pstmt.setInt(8, Integer.parseInt(attempts));
+				pstmt.setInt(9, Integer.parseInt(yards));
+				pstmt.setInt(10, Integer.parseInt(touchdowns));
+				pstmt.setInt(11, Integer.parseInt(interceptions));
+				pstmt.setInt(12, Integer.parseInt(firstdowns));
+				pstmt.setInt(13, Integer.parseInt(longest));
+				pstmt.setInt(14, Integer.parseInt(sacks));
+				pstmt.setInt(15, year);
+
+				pstmt.executeUpdate();
+			}
+		} catch (SQLException ex) {
+			return ex.getMessage();
+		}
+		return "ingested";
+	}
 }

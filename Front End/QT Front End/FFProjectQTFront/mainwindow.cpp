@@ -39,6 +39,8 @@ void MainWindow::on_ingestBtn_released()
     //add the proper endpoint name for the stats type
     if(ui->statsTypeDB->currentIndex() == 0) {
         urlString += "ingestRushingStatsForYear";
+    } else if(ui->statsTypeDB->currentIndex() == 1) {
+        urlString += "ingestPassingStatsForYear";
     }
     //add the year
     urlString += "?year=" + ui->yearEdit->text();
@@ -64,6 +66,6 @@ void MainWindow::on_ingestBtn_released()
 void MainWindow::onFinish(QNetworkReply * reply)
 {
     QByteArray response = reply->readAll();
-    ui->ingestConsole->setPlainText(QString::fromStdString(response.toStdString()));
+    ui->ingestConsole->setPlainText(ui->ingestConsole->toPlainText() + "\n" + QString::fromStdString(response.toStdString()));
 }
 
