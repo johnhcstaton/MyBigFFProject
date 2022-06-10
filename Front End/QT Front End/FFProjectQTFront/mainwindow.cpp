@@ -41,6 +41,8 @@ void MainWindow::on_ingestBtn_released()
         urlString += "ingestRushingStatsForYear";
     } else if(ui->statsTypeDB->currentIndex() == 1) {
         urlString += "ingestPassingStatsForYear";
+    } else if(ui->statsTypeDB->currentIndex() == 2) {
+        urlString += "ingestReceivingStatsForYear";
     }
     //add the year
     urlString += "?year=" + ui->yearEdit->text();
