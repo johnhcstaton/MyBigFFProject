@@ -264,6 +264,21 @@ public class FfProjectSpringBackApplication {
 			} catch (SQLException ex) {
 				System.out.println(ex.getMessage());
 			}
+		} else if(position.equalsIgnoreCase("TE")) {
+			String SQL = "SELECT player_name, position FROM receiving_stats WHERE position LIKE '" + position + "'";
+
+			try (Connection conn = connect();
+				 Statement stmt = conn.createStatement();
+				 ResultSet rs = stmt.executeQuery(SQL)) {
+
+				while (rs.next()) {
+					String playerName = rs.getString("player_name");
+					retval.add(playerName);
+				}
+
+			} catch (SQLException ex) {
+				System.out.println(ex.getMessage());
+			}
 		}
 
 		return retval;

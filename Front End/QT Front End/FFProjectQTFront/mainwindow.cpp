@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    on_playerCompPositionCb_currentTextChanged(ui->playerCompPositionCb->currentText());
 }
 
 MainWindow::~MainWindow()
@@ -91,6 +92,34 @@ void MainWindow::on_mainTabWidget_currentChanged(int index)
 void MainWindow::on_playerCompPositionCb_currentTextChanged(const QString &arg1)
 {
     //player position changed, get new position and reload player combo box
+    QString urlString = "http://localhost:8080/api/ffproject/get/getAllKnownPlayersForPosition?position=" + ui->playerCompPositionCb->currentText();
+
+    QUrl url = QUrl(urlString);
+
+    QNetworkAccessManager * mgr = new QNetworkAccessManager(this);
+
+    connect(mgr,SIGNAL(finished(QNetworkReply*)),this,SLOT(on_getAllPlayersForPositionForPlayerComp(QNetworkReply*)));
+    connect(mgr,SIGNAL(finished(QNetworkReply*)),mgr,SLOT(deleteLater()));
+
+
+    mgr->get(QNetworkRequest(url));
+
+}
+
+void MainWindow::on_getAllPlayersForPositionForPlayerComp(QNetworkReply * reply)
+{
+    QByteArray response = reply->readAll();
+    QString responseStr = QString::fromStdString(response.toStdString());
+    //strip out all {, }, [, ] and "
+    responseStr = responseStr.remove("{").remove("}").remove("\"").remove("[").remove("]");
+    QStringList playerList = responseStr.split(",");
+    ui->playerCompPlayerSelectCb->clear();
+    ui->playerCompPlayerSelectCb->addItems(playerList);
+}
+
+
+void MainWindow::on_findCompBtn_released()
+{
 
 }
 

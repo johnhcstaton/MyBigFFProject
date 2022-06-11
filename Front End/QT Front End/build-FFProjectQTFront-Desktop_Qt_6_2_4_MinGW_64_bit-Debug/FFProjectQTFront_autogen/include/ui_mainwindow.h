@@ -62,6 +62,7 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QLabel *playerCompPlayerSelectLbl;
     QComboBox *playerCompPlayerSelectCb;
+    QPushButton *findCompBtn;
     QHBoxLayout *horizontalLayout_5;
     QVBoxLayout *verticalLayout_7;
     QSpacerItem *verticalSpacer;
@@ -211,6 +212,11 @@ public:
 
         verticalLayout_6->addLayout(horizontalLayout_4);
 
+        findCompBtn = new QPushButton(playerCompTab);
+        findCompBtn->setObjectName(QString::fromUtf8("findCompBtn"));
+
+        verticalLayout_6->addWidget(findCompBtn);
+
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         verticalLayout_7 = new QVBoxLayout();
@@ -283,6 +289,7 @@ public:
         playerCompPositionCb->setItemText(3, QCoreApplication::translate("MainWindow", "TE", nullptr));
 
         playerCompPlayerSelectLbl->setText(QCoreApplication::translate("MainWindow", "Player To Compare Against:", nullptr));
+        findCompBtn->setText(QCoreApplication::translate("MainWindow", "Find Comp", nullptr));
         mainTabWidget->setTabText(mainTabWidget->indexOf(playerCompTab), QCoreApplication::translate("MainWindow", "Find Player Comp", nullptr));
     } // retranslateUi
 

@@ -198,6 +198,13 @@
          </layout>
         </item>
         <item>
+         <widget class="QPushButton" name="findCompBtn">
+          <property name="text">
+           <string>Find Comp</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_7">

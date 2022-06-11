@@ -27,6 +27,9 @@ private slots:
     void on_mainTabWidget_currentChanged(int index);
 
     void on_playerCompPositionCb_currentTextChanged(const QString &arg1);
+    void on_getAllPlayersForPositionForPlayerComp(QNetworkReply*);
+
+    void on_findCompBtn_released();
 
 private:
     Ui::MainWindow *ui;
