@@ -23,8 +23,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    const uint offsetsAndSize[14];
-    char stringdata0[98];
+    const uint offsetsAndSize[22];
+    char stringdata0[184];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
@@ -36,12 +36,19 @@ QT_MOC_LITERAL(38, 0), // ""
 QT_MOC_LITERAL(39, 12), // "fileSelected"
 QT_MOC_LITERAL(52, 21), // "on_ingestBtn_released"
 QT_MOC_LITERAL(74, 8), // "onFinish"
-QT_MOC_LITERAL(83, 14) // "QNetworkReply*"
+QT_MOC_LITERAL(83, 14), // "QNetworkReply*"
+QT_MOC_LITERAL(98, 31), // "on_mainTabWidget_currentChanged"
+QT_MOC_LITERAL(130, 5), // "index"
+QT_MOC_LITERAL(136, 42), // "on_playerCompPositionCb_curre..."
+QT_MOC_LITERAL(179, 4) // "arg1"
 
     },
     "MainWindow\0on_fileBrowserBtn_released\0"
     "\0fileSelected\0on_ingestBtn_released\0"
-    "onFinish\0QNetworkReply*"
+    "onFinish\0QNetworkReply*\0"
+    "on_mainTabWidget_currentChanged\0index\0"
+    "on_playerCompPositionCb_currentTextChanged\0"
+    "arg1"
 };
 #undef QT_MOC_LITERAL
 
@@ -51,7 +58,7 @@ static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -59,16 +66,20 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   38,    2, 0x08,    1 /* Private */,
-       3,    1,   39,    2, 0x08,    2 /* Private */,
-       4,    0,   42,    2, 0x08,    4 /* Private */,
-       5,    1,   43,    2, 0x08,    5 /* Private */,
+       1,    0,   50,    2, 0x08,    1 /* Private */,
+       3,    1,   51,    2, 0x08,    2 /* Private */,
+       4,    0,   54,    2, 0x08,    4 /* Private */,
+       5,    1,   55,    2, 0x08,    5 /* Private */,
+       7,    1,   58,    2, 0x08,    7 /* Private */,
+       9,    1,   61,    2, 0x08,    9 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 6,    2,
+    QMetaType::Void, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::QString,   10,
 
        0        // eod
 };
@@ -83,6 +94,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 1: _t->fileSelected((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 2: _t->on_ingestBtn_released(); break;
         case 3: _t->onFinish((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 4: _t->on_mainTabWidget_currentChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 5: _t->on_playerCompPositionCb_currentTextChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -107,7 +120,7 @@ const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
 , QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QNetworkReply *, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QNetworkReply *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
 
 
 >,
@@ -134,13 +147,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }

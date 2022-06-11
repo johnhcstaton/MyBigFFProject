@@ -24,6 +24,10 @@ private slots:
     void on_ingestBtn_released();
     void onFinish(QNetworkReply*);
 
+    void on_mainTabWidget_currentChanged(int index);
+
+    void on_playerCompPositionCb_currentTextChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
 };

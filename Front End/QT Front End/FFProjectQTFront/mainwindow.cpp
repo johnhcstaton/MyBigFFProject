@@ -24,6 +24,7 @@ void MainWindow::on_fileBrowserBtn_released()
     QFileDialog * fileDialog = new QFileDialog();
     fileDialog->setVisible(true);
     connect(fileDialog, SIGNAL(fileSelected(QString)), this, SLOT(fileSelected(QString)));
+    connect(fileDialog,SIGNAL(finished(QNetworkReply*)),fileDialog,SLOT(deleteLater()));
 }
 
 void MainWindow::fileSelected(QString fileString)
@@ -51,7 +52,7 @@ void MainWindow::on_ingestBtn_released()
     csvFileLoc.replace("/", "%2F");
     urlString += "&csvFile=" + csvFileLoc;
 
-    ui->ingestConsole->setPlainText("going to send to url \n" + urlString);
+    ui->ingestConsole->setPlainText(ui->ingestConsole->toPlainText() + "\n" + "going to send to url \n" + urlString);
 
     //url generated, do the sending and cross ya fingers
     QUrl url = QUrl(urlString);
@@ -69,5 +70,27 @@ void MainWindow::onFinish(QNetworkReply * reply)
 {
     QByteArray response = reply->readAll();
     ui->ingestConsole->setPlainText(ui->ingestConsole->toPlainText() + "\n" + QString::fromStdString(response.toStdString()));
+}
+
+
+void MainWindow::on_mainTabWidget_currentChanged(int index)
+{
+    switch (index) {
+        case 0: //ingest
+            break;
+        case 1: //view tabular data
+            break;
+        case 2: // player comp
+            // fill combo box with all players based on text in position combo box
+            on_playerCompPositionCb_currentTextChanged(ui->playerCompPlayerSelectCb->currentText());
+            break;
+    }
+}
+
+
+void MainWindow::on_playerCompPositionCb_currentTextChanged(const QString &arg1)
+{
+    //player position changed, get new position and reload player combo box
+
 }
 

@@ -11,14 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>John's Big FF Project</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QTabWidget" name="mainTabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="ingestTab">
        <attribute name="title">
@@ -26,9 +26,9 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <layout class="QHBoxLayout" name="ingestLayout1">
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="ingestLbl">
             <property name="text">
              <string>Ingest</string>
             </property>
@@ -54,7 +54,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="ingestForTheYearLbl">
             <property name="text">
              <string>for the year</string>
             </property>
@@ -64,7 +64,7 @@
            <widget class="QLineEdit" name="yearEdit"/>
           </item>
           <item>
-           <widget class="QLabel" name="label_3">
+           <widget class="QLabel" name="ingestUsingLbl">
             <property name="text">
              <string>using</string>
             </property>
@@ -90,9 +90,148 @@
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <widget class="QPlainTextEdit" name="ingestConsole"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="viewDataTab">
+       <attribute name="title">
+        <string>View Tabular Data</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="viewDataLayout">
           <item>
-           <widget class="QPlainTextEdit" name="ingestConsole"/>
+           <widget class="QComboBox" name="statsCB">
+            <item>
+             <property name="text">
+              <string>Rushing Stats</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Passing Stats</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Receiving Stats</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="yearCB">
+            <item>
+             <property name="text">
+              <string>All Years</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="refreshBtn">
+            <property name="text">
+             <string>Refresh</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="viewDataTbl"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="playerCompTab">
+       <attribute name="title">
+        <string>Find Player Comp</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="playerCompPositionLbl">
+            <property name="text">
+             <string>Select Player Position:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="playerCompPositionCb">
+            <item>
+             <property name="text">
+              <string>QB</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>RB</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>WR</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TE</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QLabel" name="playerCompPlayerSelectLbl">
+            <property name="text">
+             <string>Player To Compare Against:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="playerCompPlayerSelectCb"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </item>
          </layout>
         </item>

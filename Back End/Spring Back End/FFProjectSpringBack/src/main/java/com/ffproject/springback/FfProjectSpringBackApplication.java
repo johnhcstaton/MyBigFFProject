@@ -12,10 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.*;
 import java.util.regex.Pattern;
 
 @SpringBootApplication
@@ -43,7 +41,7 @@ public class FfProjectSpringBackApplication {
 	@SuppressWarnings("deprecation")
 	@PostMapping({"/ingest/ingestRushingStatsForYear"})
 	public String ingestRushingStatsForYear(final Integer year, final String csvFile) throws IOException {
-		String SQL = "INSERT INTO rushing_stats(player_name, team, age, position, games_played, games_started, rushing_attempts, " +
+		String rushingStatSQL = "INSERT INTO rushing_stats(player_name, team, age, position, games_played, games_started, rushing_attempts, " +
 				"rushing_yards, rushing_touchdowns, rushing_first_downs, longest_rush, rushing_yards_per_attempt, " +
 				"rushing_yards_per_game, fumbles, year) " +
 				"VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -59,7 +57,9 @@ public class FfProjectSpringBackApplication {
 				String[] playerSplit = player.split(Pattern.quote("\\"));
 				String team = record.get("Tm").toUpperCase();
 				String age = record.get("Age");
-				String position = record.get("Pos").toUpperCase();;
+				String position = record.get("Pos").toUpperCase();
+				position = position.replace("/", "");
+				if(position.isEmpty()) { position = "RB"; }
 				String games = record.get("G");
 				String gamesStarted = record.get("GS");
 				String attempts = record.get("Att");
@@ -74,7 +74,7 @@ public class FfProjectSpringBackApplication {
 						attempts + " " + yards + " " + touchdowns + " " + firstdowns + " " + longest + " " + yardsPerRush
 						+ " " + yardsPerGame + " " + fumbles + " " + year);
 
-				PreparedStatement pstmt = conn.prepareStatement(SQL);
+				PreparedStatement pstmt = conn.prepareStatement(rushingStatSQL);
 				pstmt.setString(1, playerSplit[0].trim());
 				pstmt.setString(2, team);
 				pstmt.setInt(3, Integer.parseInt(age));
@@ -90,7 +90,6 @@ public class FfProjectSpringBackApplication {
 				pstmt.setDouble(13,Double.parseDouble(yardsPerGame));
 				pstmt.setInt(14, Integer.parseInt(fumbles));
 				pstmt.setInt(15, year);
-
 				pstmt.executeUpdate();
 			}
 		} catch (SQLException ex) {
@@ -118,7 +117,9 @@ public class FfProjectSpringBackApplication {
 				String[] playerSplit = player.split(Pattern.quote("\\"));
 				String team = record.get("Tm").toUpperCase();
 				String age = record.get("Age");
-				String position = record.get("Pos").toUpperCase();;
+				String position = record.get("Pos").toUpperCase();
+				position = position.replace("/", "");
+				if(position.isEmpty()) { position = "QB"; }
 				String games = record.get("G");
 				String gamesStarted = record.get("GS");
 				String completions = record.get("Cmp");
@@ -149,7 +150,6 @@ public class FfProjectSpringBackApplication {
 				pstmt.setInt(13, Integer.parseInt(longest));
 				pstmt.setInt(14, Integer.parseInt(sacks));
 				pstmt.setInt(15, year);
-
 				pstmt.executeUpdate();
 			}
 		} catch (SQLException ex) {
@@ -176,7 +176,9 @@ public class FfProjectSpringBackApplication {
 				String[] playerSplit = player.split(Pattern.quote("\\"));
 				String team = record.get("Tm").toUpperCase();
 				String age = record.get("Age");
-				String position = record.get("Pos").toUpperCase();;
+				String position = record.get("Pos").toUpperCase();
+				position = position.replace("/", "");
+				if(position.isEmpty()) { position = "WR"; }
 				String games = record.get("G");
 				String gamesStarted = record.get("GS");
 				String targets = record.get("Tgt");
@@ -205,12 +207,65 @@ public class FfProjectSpringBackApplication {
 				pstmt.setInt(12, Integer.parseInt(longest));
 				pstmt.setInt(13, Integer.parseInt(fumbles));
 				pstmt.setInt(14, year);
-
 				pstmt.executeUpdate();
 			}
 		} catch (SQLException ex) {
 			return ex.getMessage();
 		}
 		return "ingested";
+	}
+
+	@GetMapping({"/get/getAllKnownPlayersForPosition"})
+	public Set<String> getAllKnownPlayersForPosition(final String position) {
+		Set<String> retval = new TreeSet<>();
+
+		if(position.equalsIgnoreCase("QB")) {
+			String SQL = "SELECT player_name, position FROM passing_stats WHERE position LIKE '" + position + "'";
+
+			try (Connection conn = connect();
+				 Statement stmt = conn.createStatement();
+				 ResultSet rs = stmt.executeQuery(SQL)) {
+
+				while (rs.next()) {
+					String playerName = rs.getString("player_name");
+					retval.add(playerName);
+				}
+
+			} catch (SQLException ex) {
+				System.out.println(ex.getMessage());
+			}
+		} else if(position.equalsIgnoreCase("RB")) {
+			String SQL = "SELECT player_name, position FROM rushing_stats WHERE position LIKE '" + position + "'";
+
+			try (Connection conn = connect();
+				 Statement stmt = conn.createStatement();
+				 ResultSet rs = stmt.executeQuery(SQL)) {
+
+				while (rs.next()) {
+					String playerName = rs.getString("player_name");
+					retval.add(playerName);
+				}
+
+			} catch (SQLException ex) {
+				System.out.println(ex.getMessage());
+			}
+		} else if(position.equalsIgnoreCase("WR")) {
+			String SQL = "SELECT player_name, position FROM receiving_stats WHERE position LIKE '" + position + "'";
+
+			try (Connection conn = connect();
+				 Statement stmt = conn.createStatement();
+				 ResultSet rs = stmt.executeQuery(SQL)) {
+
+				while (rs.next()) {
+					String playerName = rs.getString("player_name");
+					retval.add(playerName);
+				}
+
+			} catch (SQLException ex) {
+				System.out.println(ex.getMessage());
+			}
+		}
+
+		return retval;
 	}
 }
