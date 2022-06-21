@@ -23,8 +23,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    const uint offsetsAndSize[26];
-    char stringdata0[249];
+    const uint offsetsAndSize[28];
+    char stringdata0[275];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(offsetof(qt_meta_stringdata_MainWindow_t, stringdata0) + ofs), len 
@@ -42,7 +42,8 @@ QT_MOC_LITERAL(130, 5), // "index"
 QT_MOC_LITERAL(136, 42), // "on_playerCompPositionCb_curre..."
 QT_MOC_LITERAL(179, 4), // "arg1"
 QT_MOC_LITERAL(184, 40), // "on_getAllPlayersForPositionFo..."
-QT_MOC_LITERAL(225, 23) // "on_findCompBtn_released"
+QT_MOC_LITERAL(225, 23), // "on_findCompBtn_released"
+QT_MOC_LITERAL(249, 25) // "playerCompEndpointReplied"
 
     },
     "MainWindow\0on_fileBrowserBtn_released\0"
@@ -51,7 +52,8 @@ QT_MOC_LITERAL(225, 23) // "on_findCompBtn_released"
     "on_mainTabWidget_currentChanged\0index\0"
     "on_playerCompPositionCb_currentTextChanged\0"
     "arg1\0on_getAllPlayersForPositionForPlayerComp\0"
-    "on_findCompBtn_released"
+    "on_findCompBtn_released\0"
+    "playerCompEndpointReplied"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,7 +63,7 @@ static const uint qt_meta_data_MainWindow[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       9,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -69,14 +71,15 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   62,    2, 0x08,    1 /* Private */,
-       3,    1,   63,    2, 0x08,    2 /* Private */,
-       4,    0,   66,    2, 0x08,    4 /* Private */,
-       5,    1,   67,    2, 0x08,    5 /* Private */,
-       7,    1,   70,    2, 0x08,    7 /* Private */,
-       9,    1,   73,    2, 0x08,    9 /* Private */,
-      11,    1,   76,    2, 0x08,   11 /* Private */,
-      12,    0,   79,    2, 0x08,   13 /* Private */,
+       1,    0,   68,    2, 0x08,    1 /* Private */,
+       3,    1,   69,    2, 0x08,    2 /* Private */,
+       4,    0,   72,    2, 0x08,    4 /* Private */,
+       5,    1,   73,    2, 0x08,    5 /* Private */,
+       7,    1,   76,    2, 0x08,    7 /* Private */,
+       9,    1,   79,    2, 0x08,    9 /* Private */,
+      11,    1,   82,    2, 0x08,   11 /* Private */,
+      12,    0,   85,    2, 0x08,   13 /* Private */,
+      13,    1,   86,    2, 0x08,   14 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -87,6 +90,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void, QMetaType::QString,   10,
     QMetaType::Void, 0x80000000 | 6,    2,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 6,    2,
 
        0        // eod
 };
@@ -105,6 +109,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 5: _t->on_playerCompPositionCb_currentTextChanged((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 6: _t->on_getAllPlayersForPositionForPlayerComp((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         case 7: _t->on_findCompBtn_released(); break;
+        case 8: _t->playerCompEndpointReplied((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -124,6 +129,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
                 *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QNetworkReply* >(); break;
             }
             break;
+        case 8:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QNetworkReply* >(); break;
+            }
+            break;
         }
     }
 }
@@ -136,7 +148,7 @@ const QMetaObject MainWindow::staticMetaObject = { {
     nullptr,
 qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t
 , QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>
-, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QNetworkReply *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QNetworkReply *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QString, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QNetworkReply *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<const QString &, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QNetworkReply *, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<QNetworkReply *, std::false_type>
 
 
 >,
@@ -163,13 +175,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 9;
     }
     return _id;
 }

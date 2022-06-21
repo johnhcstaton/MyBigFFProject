@@ -327,9 +327,12 @@ public class FfProjectSpringBackApplication {
 		Set<String> allPlayersForPosition = getAllKnownPlayersForPosition(position);
 
 		for(String possiblePlayerComp : allPlayersForPosition) {
-			//compare playerName and possiblePlayerComp and get "Comparison Score"
-			Double comparisonScore = compareTwoPlayers(playerName, possiblePlayerComp, position);
-			playerComps.put(possiblePlayerComp, comparisonScore);
+			//ensure we're not comparing a player to themselves
+			if(!playerName.equalsIgnoreCase(possiblePlayerComp)) {
+				//compare playerName and possiblePlayerComp and get "Comparison Score"
+				Double comparisonScore = compareTwoPlayers(playerName, possiblePlayerComp, position);
+				playerComps.put(possiblePlayerComp, comparisonScore);
+			}
 		}
 
 		//Sort playerComps by Comparison Score
@@ -349,6 +352,24 @@ public class FfProjectSpringBackApplication {
 
 		Player player1 = getPlayerFromDB(player1Name, position);
 		Player player2 = getPlayerFromDB(player2Name, position);
+
+		//First check is that we want to make sure that Player 2 has MORE seasons than Player 1, this is because
+		//we want to be able to use the comparison to project the next seasons for Player 1
+		int player1SeasonCount = 0; int player2SeasonCount = 0;
+		if(position.equalsIgnoreCase("QB")) {
+			player1SeasonCount = player1.getPassingStats().keySet().size();
+			player2SeasonCount = player1.getPassingStats().keySet().size();
+		} else if(position.equalsIgnoreCase("RB")) {
+			player1SeasonCount = player1.getRushingStats().keySet().size();
+			player2SeasonCount = player1.getRushingStats().keySet().size();
+		} else {
+			player1SeasonCount = player1.getReceivingStats().keySet().size();
+			player2SeasonCount = player1.getReceivingStats().keySet().size();
+		}
+
+		if(player2SeasonCount > player1SeasonCount) {
+
+		}
 
 		return retval;
 	}
@@ -453,7 +474,7 @@ public class FfProjectSpringBackApplication {
 				statsMap.put("first_downs_receiving", rs.getInt("first_downs_receiving"));
 				statsMap.put("longest_reception", rs.getInt("longest_reception"));
 				statsMap.put("fumbles", rs.getInt("fumbles"));
-				retval.setRushingStat(statsMap, rs.getInt("year"));
+				retval.setReceivingStat(statsMap, rs.getInt("year"));
 			}
 
 		} catch (SQLException e) {

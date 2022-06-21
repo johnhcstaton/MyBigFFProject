@@ -30,6 +30,7 @@ private slots:
     void on_getAllPlayersForPositionForPlayerComp(QNetworkReply*);
 
     void on_findCompBtn_released();
+    void playerCompEndpointReplied(QNetworkReply*);
 
 private:
     Ui::MainWindow *ui;

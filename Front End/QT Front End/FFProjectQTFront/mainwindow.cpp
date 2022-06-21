@@ -120,6 +120,23 @@ void MainWindow::on_getAllPlayersForPositionForPlayerComp(QNetworkReply * reply)
 
 void MainWindow::on_findCompBtn_released()
 {
+    //find comp button pressed and released
+    QString urlString = "http://localhost:8080/api/ffproject/get/getCompsForPlayerAndPosition?position=" + ui->playerCompPositionCb->currentText() +
+            "&playerName=" + ui->playerCompPlayerSelectCb->currentText();
 
+    QUrl url = QUrl(urlString);
+
+    QNetworkAccessManager * mgr = new QNetworkAccessManager(this);
+
+    connect(mgr,SIGNAL(finished(QNetworkReply*)),this,SLOT(playerCompEndpointReplied(QNetworkReply*)));
+    connect(mgr,SIGNAL(finished(QNetworkReply*)),mgr,SLOT(deleteLater()));
+
+
+    mgr->get(QNetworkRequest(url));
+}
+
+void MainWindow::playerCompEndpointReplied(QNetworkReply *)
+{
+    //Player Comp endpoint returned
 }
 

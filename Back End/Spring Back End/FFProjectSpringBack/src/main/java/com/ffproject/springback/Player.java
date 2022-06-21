@@ -8,6 +8,7 @@ public class Player {
     String position = "";
     Map<Integer, Map<String, Object>> passingStats = new HashMap<>(); // first key is the year, which gets you a map of stat name -> amount
     Map<Integer, Map<String, Object>> rushingStats = new HashMap<>();
+    Map<Integer, Map<String, Object>> receivingStats = new HashMap<>();
 
     public Map<Integer, Map<String, Object>> getPassingStats() {
         return passingStats;
@@ -29,6 +30,17 @@ public class Player {
     }
     public void setRushingStat(Map<String, Object> stats, Integer year) {
         this.rushingStats.put(year, stats);
+    }
+
+    public Map<Integer, Map<String, Object>> getReceivingStats() {
+        return receivingStats;
+    }
+
+    public void setReceivingStats(Map<Integer, Map<String, Object>> rushingStats) {
+        this.receivingStats = rushingStats;
+    }
+    public void setReceivingStat(Map<String, Object> stats, Integer year) {
+        this.receivingStats.put(year, stats);
     }
 
     public String getName() {

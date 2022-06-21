@@ -7,22 +7,7 @@
     <list default="true" id="4b420bbb-9eaa-49f3-bf6b-b93590a90f27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ffproject/springback/FfProjectSpringBackApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ffproject/springback/FfProjectSpringBackApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/FFProjectQTFront/CMakeLists.txt.user" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/FFProjectQTFront/CMakeLists.txt.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QByteArray.DAA44052C3394578.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QByteArray.DAA44052C3394578.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QHeaderView.B53434CFC45AF02F.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QHeaderView.B53434CFC45AF02F.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QHttpPart.E5A7042AEFF6E896.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QHttpPart.E5A7042AEFF6E896.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QSpacerItem.FDECB03071E94E85.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QSpacerItem.FDECB03071E94E85.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QTableWidget.0D9328E8015A5293.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/QTableWidget.0D9328E8015A5293.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/mainwindow.cpp.C51BE83D0BA87CA3.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/mainwindow.cpp.C51BE83D0BA87CA3.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/mainwindow.h.03AAD56C539FE2BA.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/mainwindow.h.03AAD56C539FE2BA.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qabstractitemview.h.F945DFD26E02B84F.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qabstractitemview.h.F945DFD26E02B84F.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qheaderview.h.B05E1D60E32BC508.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qheaderview.h.B05E1D60E32BC508.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qhttpmultipart.h.FA7C73EC2EAD1F35.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qhttpmultipart.h.FA7C73EC2EAD1F35.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qitemselectionmodel.h.45DE241898206875.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qitemselectionmodel.h.45DE241898206875.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qtableview.h.348243E600812FE1.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qtableview.h.348243E600812FE1.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qtablewidget.h.EFE354AE92B72530.idx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/.cache/clangd/index/qtablewidget.h.EFE354AE92B72530.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/.qtc_clangd/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Front End/QT Front End/build-FFProjectQTFront-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ffproject/springback/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ffproject/springback/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,21 +103,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ffproject/springback/FfProjectSpringBackApplication.java</url>
-          <line>462</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ffproject/springback/FfProjectSpringBackApplication.java</url>
-          <line>448</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
