@@ -33,11 +33,22 @@ public class FfProjectSpringBackApplication {
 		return DriverManager.getConnection(url, user, password);
 	}
 
+	/**
+	 *
+	 * @return
+	 */
 	@GetMapping({"/test/testEndpoint"})
 	public String testEndpoint() {
 		return "test";
 	}
 
+	/**
+	 *
+	 * @param year
+	 * @param csvFile
+	 * @return
+	 * @throws IOException
+	 */
 	@SuppressWarnings("deprecation")
 	@PostMapping({"/ingest/ingestRushingStatsForYear"})
 	public String ingestRushingStatsForYear(final Integer year, final String csvFile) throws IOException {
@@ -98,6 +109,13 @@ public class FfProjectSpringBackApplication {
 		return "ingested";
 	}
 
+	/**
+	 *
+	 * @param year
+	 * @param csvFile
+	 * @return
+	 * @throws IOException
+	 */
 	@SuppressWarnings("deprecation")
 	@PostMapping({"/ingest/ingestPassingStatsForYear"})
 	public String ingestPassingStatsForYear(final Integer year, final String csvFile) throws IOException {
@@ -158,6 +176,13 @@ public class FfProjectSpringBackApplication {
 		return "ingested";
 	}
 
+	/**
+	 *
+	 * @param year
+	 * @param csvFile
+	 * @return
+	 * @throws IOException
+	 */
 	@SuppressWarnings("deprecation")
 	@PostMapping({"/ingest/ingestReceivingStatsForYear"})
 	public String ingestReceivingStatsForYear(final Integer year, final String csvFile) throws IOException {
@@ -215,6 +240,11 @@ public class FfProjectSpringBackApplication {
 		return "ingested";
 	}
 
+	/**
+	 *
+	 * @param position
+	 * @return
+	 */
 	@GetMapping({"/get/getAllKnownPlayersForPosition"})
 	public Set<String> getAllKnownPlayersForPosition(final String position) {
 		Set<String> retval = new TreeSet<>();
@@ -279,6 +309,155 @@ public class FfProjectSpringBackApplication {
 			} catch (SQLException ex) {
 				System.out.println(ex.getMessage());
 			}
+		}
+
+		return retval;
+	}
+
+	/**
+	 *
+	 * @param playerName
+	 * @param position
+	 * @return
+	 */
+	@GetMapping({"/get/getCompsForPlayerAndPosition"})
+	public Map<String, Double> getCompsForPlayerAndPosition(final String playerName, final String position) {
+		HashMap<String, Double> playerComps = new HashMap<>();
+
+		Set<String> allPlayersForPosition = getAllKnownPlayersForPosition(position);
+
+		for(String possiblePlayerComp : allPlayersForPosition) {
+			//compare playerName and possiblePlayerComp and get "Comparison Score"
+			Double comparisonScore = compareTwoPlayers(playerName, possiblePlayerComp, position);
+			playerComps.put(possiblePlayerComp, comparisonScore);
+		}
+
+		//Sort playerComps by Comparison Score
+		
+		return playerComps;
+	}
+
+	/**
+	 *
+	 * @param player1Name
+	 * @param player2Name
+	 * @param position
+	 * @return
+	 */
+	private Double compareTwoPlayers(final String player1Name, final String player2Name, final String position) {
+		Double retval = 999999.9;
+
+		Player player1 = getPlayerFromDB(player1Name, position);
+		Player player2 = getPlayerFromDB(player2Name, position);
+
+		return retval;
+	}
+
+	/**
+	 *
+	 * @param playerName
+	 * @param position
+	 * @return
+	 */
+	private Player getPlayerFromDB(final String playerName, final String position) {
+		Player retval = new Player();
+		retval.setName(playerName);
+		retval.setPosition(position);
+
+		if(position.equalsIgnoreCase("QB")) {
+			// Get from passing
+			String passingSQL = "SELECT player_name, team, age, \"position\", games_played, games_started, " +
+				"passes_completed, passes_attempted, passing_yards, passing_touchdowns, interceptions, " +
+				"first_downs_passing, longest_pass, sacks, year\n" +
+				"FROM passing_stats\n" +
+				"WHERE player_name LIKE '" + playerName + "';";
+
+			try(Connection conn = connect();
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(passingSQL)) {
+
+				while(rs.next()) {
+					//get the whatnots from the resultset and add them to the player stats
+					HashMap<String, Object> statsMap = new HashMap<>();
+					statsMap.put("team", rs.getString("team"));
+					statsMap.put("age", rs.getInt("age"));
+					statsMap.put("games_played", rs.getInt("games_played"));
+					statsMap.put("games_started", rs.getInt("games_started"));
+					statsMap.put("passes_completed", rs.getInt("passes_completed"));
+					statsMap.put("passes_attempted", rs.getInt("passes_attempted"));
+					statsMap.put("passing_yards", rs.getInt("passing_yards"));
+					statsMap.put("passing_touchdowns", rs.getInt("passing_touchdowns"));
+					statsMap.put("interceptions", rs.getInt("interceptions"));
+					statsMap.put("first_downs_passing", rs.getInt("first_downs_passing"));
+					statsMap.put("longest_pass", rs.getInt("longest_pass"));
+					statsMap.put("sacks", rs.getInt("sacks"));
+					retval.setPassingStat(statsMap, rs.getInt("year"));
+				}
+
+			} catch (SQLException e) {
+				throw new RuntimeException(e);
+			}
+		}
+		// then get from rushing
+		String rushingSQL = "SELECT player_name, team, age, \"position\", games_played, games_started, " +
+				"rushing_attempts, rushing_yards, rushing_touchdowns, rushing_first_downs, longest_rush, " + "" +
+				"rushing_yards_per_attempt, rushing_yards_per_game, fumbles, year\n" +
+				"FROM rushing_stats\n" +
+				"WHERE player_name LIKE '" + playerName + "';";
+
+		try(Connection conn = connect();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(rushingSQL)) {
+
+			while(rs.next()) {
+				//get the whatnots from the resultset and add them to the player stats
+				HashMap<String, Object> statsMap = new HashMap<>();
+				statsMap.put("team", rs.getString("team"));
+				statsMap.put("age", rs.getInt("age"));
+				statsMap.put("games_played", rs.getInt("games_played"));
+				statsMap.put("games_started", rs.getInt("games_started"));
+				statsMap.put("rushing_attempts", rs.getInt("rushing_attempts"));
+				statsMap.put("rushing_yards", rs.getInt("rushing_yards"));
+				statsMap.put("rushing_touchdowns", rs.getInt("rushing_touchdowns"));
+				statsMap.put("rushing_first_downs", rs.getInt("rushing_first_downs"));
+				statsMap.put("longest_rush", rs.getInt("longest_rush"));
+				statsMap.put("fumbles", rs.getInt("fumbles"));
+				retval.setRushingStat(statsMap, rs.getInt("year"));
+			}
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+		// then get from receiving
+		String receivingSQL = "SELECT player_name, team, age, \"position\", games_played, games_started, targets, " +
+				"receptions, receiving_yards, receiving_touchdowns, first_downs_receiving, longest_reception, fumbles, year\n" +
+				"FROM receiving_stats\n" +
+				"WHERE player_name LIKE '" + playerName + "';";
+
+		try(Connection conn = connect();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(receivingSQL)) {
+
+			while(rs.next()) {
+				//get the whatnots from the resultset and add them to the player stats
+				HashMap<String, Object> statsMap = new HashMap<>();
+				statsMap.put("team", rs.getString("team"));
+				statsMap.put("age", rs.getInt("age"));
+				statsMap.put("games_played", rs.getInt("games_played"));
+				statsMap.put("games_started", rs.getInt("games_started"));
+				statsMap.put("targets", rs.getInt("targets"));
+				statsMap.put("receptions", rs.getInt("receptions"));
+				statsMap.put("receiving_yards", rs.getInt("receiving_yards"));
+				statsMap.put("receiving_touchdowns", rs.getInt("receiving_touchdowns"));
+				statsMap.put("first_downs_receiving", rs.getInt("first_downs_receiving"));
+				statsMap.put("longest_reception", rs.getInt("longest_reception"));
+				statsMap.put("fumbles", rs.getInt("fumbles"));
+				retval.setRushingStat(statsMap, rs.getInt("year"));
+			}
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
 		}
 
 		return retval;
