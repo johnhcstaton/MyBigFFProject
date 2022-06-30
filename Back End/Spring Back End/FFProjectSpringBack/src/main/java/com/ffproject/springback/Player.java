@@ -2,13 +2,16 @@ package com.ffproject.springback;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Player {
     String name = "";
     String position = "";
-    Map<Integer, Map<String, Object>> passingStats = new HashMap<>(); // first key is the year, which gets you a map of stat name -> amount
-    Map<Integer, Map<String, Object>> rushingStats = new HashMap<>();
-    Map<Integer, Map<String, Object>> receivingStats = new HashMap<>();
+
+    //Use TreeMaps to guarantee the years are sorted
+    Map<Integer, Map<String, Object>> passingStats = new TreeMap<>(); // first key is the year, which gets you a map of stat name -> amount
+    Map<Integer, Map<String, Object>> rushingStats = new TreeMap<>();
+    Map<Integer, Map<String, Object>> receivingStats = new TreeMap<>();
 
     public Map<Integer, Map<String, Object>> getPassingStats() {
         return passingStats;

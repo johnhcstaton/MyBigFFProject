@@ -65,6 +65,7 @@ public class FfProjectSpringBackApplication {
 				String player = record.get("Player");
 				player = player.replace("*", "");
 				player = player.replace("+", "");
+				player = player.replace("'", "");
 				String[] playerSplit = player.split(Pattern.quote("\\"));
 				String team = record.get("Tm").toUpperCase();
 				String age = record.get("Age");
@@ -132,6 +133,7 @@ public class FfProjectSpringBackApplication {
 				String player = record.get("Player");
 				player = player.replace("*", "");
 				player = player.replace("+", "");
+				player = player.replace("'", "");
 				String[] playerSplit = player.split(Pattern.quote("\\"));
 				String team = record.get("Tm").toUpperCase();
 				String age = record.get("Age");
@@ -198,6 +200,7 @@ public class FfProjectSpringBackApplication {
 				String player = record.get("Player");
 				player = player.replace("*", "");
 				player = player.replace("+", "");
+				player = player.replace("'", "");
 				String[] playerSplit = player.split(Pattern.quote("\\"));
 				String team = record.get("Tm").toUpperCase();
 				String age = record.get("Age");
@@ -331,7 +334,9 @@ public class FfProjectSpringBackApplication {
 			if(!playerName.equalsIgnoreCase(possiblePlayerComp)) {
 				//compare playerName and possiblePlayerComp and get "Comparison Score"
 				Double comparisonScore = compareTwoPlayers(playerName, possiblePlayerComp, position);
-				playerComps.put(possiblePlayerComp, comparisonScore);
+				if(comparisonScore != 0.0) {
+					playerComps.put(possiblePlayerComp, comparisonScore);
+				}
 			}
 		}
 
@@ -348,7 +353,7 @@ public class FfProjectSpringBackApplication {
 	 * @return
 	 */
 	private Double compareTwoPlayers(final String player1Name, final String player2Name, final String position) {
-		Double retval = 999999.9;
+		Double retval = 0.0;
 
 		Player player1 = getPlayerFromDB(player1Name, position);
 		Player player2 = getPlayerFromDB(player2Name, position);
@@ -358,17 +363,40 @@ public class FfProjectSpringBackApplication {
 		int player1SeasonCount = 0; int player2SeasonCount = 0;
 		if(position.equalsIgnoreCase("QB")) {
 			player1SeasonCount = player1.getPassingStats().keySet().size();
-			player2SeasonCount = player1.getPassingStats().keySet().size();
+			player2SeasonCount = player2.getPassingStats().keySet().size();
 		} else if(position.equalsIgnoreCase("RB")) {
 			player1SeasonCount = player1.getRushingStats().keySet().size();
-			player2SeasonCount = player1.getRushingStats().keySet().size();
+			player2SeasonCount = player2.getRushingStats().keySet().size();
 		} else {
 			player1SeasonCount = player1.getReceivingStats().keySet().size();
-			player2SeasonCount = player1.getReceivingStats().keySet().size();
+			player2SeasonCount = player2.getReceivingStats().keySet().size();
 		}
 
 		if(player2SeasonCount > player1SeasonCount) {
-
+//			System.out.println("Can compare " + player1Name + " to " + player2Name);
+			if(position.equalsIgnoreCase("QB")) {
+				// compare passing and rushing
+				Double totalPassingSimilarity = 0.0;
+				final Map<Integer, Map<String, Object>> p1PassingStats = player1.getPassingStats();
+				final Map<Integer, Map<String, Object>> p2PassingStats = player2.getPassingStats();
+				Integer firstP2Year = p2PassingStats.keySet().iterator().next();
+				int count = 0;
+				for(Integer player1Year : p1PassingStats.keySet()) {
+					final Map<String, Object> p1PassingForYear = p1PassingStats.get(player1Year);
+					final Map<String, Object> p2PassingForYear = p2PassingStats.get(firstP2Year + count);
+					//now we can compare two seasons of passing stats against each other and get a score of 0-100 similarity
+					if(p1PassingForYear != null && p2PassingForYear != null) {
+						Double seasonPassingSimilarity = compareTwoPassingSeasons(p1PassingForYear, p2PassingForYear);
+						totalPassingSimilarity += seasonPassingSimilarity;
+					}
+					count++;
+				}
+				totalPassingSimilarity = totalPassingSimilarity / player1SeasonCount;
+				System.out.println("Total passing similarity for " + player1Name + " & " + player2Name + ": " + totalPassingSimilarity);
+				retval = totalPassingSimilarity;
+			} else {
+				// comparing rushing and receiving
+			}
 		}
 
 		return retval;
@@ -482,5 +510,64 @@ public class FfProjectSpringBackApplication {
 		}
 
 		return retval;
+	}
+
+	/**
+	 *
+	 * @param p1PassingForYear
+	 * @param p2PassingForYear
+	 * @return
+	 */
+	private Double compareTwoPassingSeasons(final Map<String, Object> p1PassingForYear,
+											final Map<String, Object> p2PassingForYear) {
+		Double retval = 0.0;
+
+//		passes_completed
+		Double passesCompletedSimilarity = compareTwoNumbers((Integer) p2PassingForYear.get("passes_completed"),
+				(Integer) p1PassingForYear.get("passes_completed")) * 100;  // 0 will mean completely dissimilar, 100 will mean exactly the same
+//		passes_attempted
+		Double passesAttemptedSimilarity = compareTwoNumbers((Integer) p2PassingForYear.get("passes_attempted"),
+				(Integer) p1PassingForYear.get("passes_attempted")) * 100;
+//		passing_yards
+		Double passingYardsSimilarity = compareTwoNumbers((Integer) p2PassingForYear.get("passing_yards"),
+				(Integer) p1PassingForYear.get("passing_yards")) * 100;
+//		passing_touchdowns
+		Double passingTdsSimilarity = compareTwoNumbers((Integer) p2PassingForYear.get("passing_touchdowns"),
+				(Integer) p1PassingForYear.get("passing_touchdowns")) * 100;
+//		interceptions
+		Double intsSimilarity = compareTwoNumbers((Integer) p2PassingForYear.get("interceptions"),
+				(Integer) p1PassingForYear.get("interceptions")) * 100;
+//		first_downs_passing
+		Double firstDownsSimilarity = compareTwoNumbers((Integer) p2PassingForYear.get("first_downs_passing"),
+				(Integer) p1PassingForYear.get("first_downs_passing")) * 100;
+//		longest_pass
+		Double longestPassSimilarity = compareTwoNumbers((Integer) p2PassingForYear.get("longest_pass"),
+				(Integer) p1PassingForYear.get("longest_pass")) * 100;
+//		sacks
+		Double sacksSimilarity = compareTwoNumbers((Integer) p2PassingForYear.get("sacks"),
+				(Integer) p1PassingForYear.get("sacks")) * 100;
+
+		retval = (passesCompletedSimilarity + passesAttemptedSimilarity + passingYardsSimilarity + passingTdsSimilarity +
+				intsSimilarity + firstDownsSimilarity + longestPassSimilarity + sacksSimilarity)/8;
+
+		return retval;
+	}
+
+	/**
+	 * 
+	 * @param number1
+	 * @param number2
+	 * @return
+	 */
+	private Double compareTwoNumbers(Integer number1, Integer number2) {
+		if(number1 > number2 && number1 != 0) {
+			return ((double) number2 / (double) number1);
+		} else {
+			if(number2 != 0) {
+				return ((double) number1 / (double) number2);
+			} else {
+				return 0.0;
+			}
+		}
 	}
 }
