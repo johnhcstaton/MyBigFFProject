@@ -375,7 +375,7 @@ public class FfProjectSpringBackApplication {
 		if(player2SeasonCount > player1SeasonCount) {
 //			System.out.println("Can compare " + player1Name + " to " + player2Name);
 			if(position.equalsIgnoreCase("QB")) {
-				// compare passing and rushing
+				// compare passing
 				Double totalPassingSimilarity = 0.0;
 				final Map<Integer, Map<String, Object>> p1PassingStats = player1.getPassingStats();
 				final Map<Integer, Map<String, Object>> p2PassingStats = player2.getPassingStats();
@@ -395,8 +395,29 @@ public class FfProjectSpringBackApplication {
 				System.out.println("Total passing similarity for " + player1Name + " & " + player2Name + ": " + totalPassingSimilarity);
 				retval = totalPassingSimilarity;
 			} else {
-				// comparing rushing and receiving
+				// compare receiving
 			}
+
+			// comparing rushing, everyone gets this
+			Double totalRushingSimilarity = 0.0;
+			final Map<Integer, Map<String, Object>> p1RushingStats = player1.getRushingStats();
+			final Map<Integer, Map<String, Object>> p2RushingStats = player2.getRushingStats();
+			Integer firstP2Year = p2RushingStats.keySet().iterator().next();
+			int count = 0;
+			for(Integer player1Year : p1RushingStats.keySet()) {
+				final Map<String, Object> p1RushingForYear = p1RushingStats.get(player1Year);
+				final Map<String, Object> p2RushingForYear = p2RushingStats.get(firstP2Year + count);
+				//now we can compare two seasons of passing stats against each other and get a score of 0-100 similarity
+				if(p1RushingForYear != null && p2RushingForYear != null) {
+					Double seasonRushingSimilarity = compareTwoRushingSeasons(p1RushingForYear, p2RushingForYear);
+					totalRushingSimilarity += seasonRushingSimilarity;
+				}
+				count++;
+			}
+			totalRushingSimilarity = totalRushingSimilarity / player1SeasonCount;
+			System.out.println("Total rushing similarity for " + player1Name + " & " + player2Name + ": " + totalRushingSimilarity);
+			retval = totalRushingSimilarity;
+
 		}
 
 		return retval;
@@ -549,6 +570,19 @@ public class FfProjectSpringBackApplication {
 
 		retval = (passesCompletedSimilarity + passesAttemptedSimilarity + passingYardsSimilarity + passingTdsSimilarity +
 				intsSimilarity + firstDownsSimilarity + longestPassSimilarity + sacksSimilarity)/8;
+
+		return retval;
+	}
+
+	/**
+	 *
+	 * @param p1RushingForYear
+	 * @param p2RushingForYear
+	 * @return
+	 */
+	private Double compareTwoRushingSeasons(final Map<String, Object> p1RushingForYear,
+											final Map<String, Object> p2RushingForYear) {
+		Double retval = 0.0;
 
 		return retval;
 	}
